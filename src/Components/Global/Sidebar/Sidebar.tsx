@@ -50,11 +50,12 @@ export const Sidebar: React.FC = () => {
   return (
     <aside
       className={`
-      relative h-screen bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800
+      fixed left-0 h-screen bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800
       transition-all duration-300 ease-in-out flex flex-col
       ${isCollapsed ? "w-20" : "w-64"}
-      md:relative md:translate-x-0
+      md:translate-x-0
       ${isCollapsed ? "-translate-x-full md:translate-x-0" : "translate-x-0"}
+      z-50
     `}
     >
       {/* Sticky Header */}
