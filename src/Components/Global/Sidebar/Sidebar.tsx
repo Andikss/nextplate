@@ -30,6 +30,7 @@ import {
   NavigationSection,
   UserProfile,
 } from "./Child";
+import Image from "next/image";
 
 export const Sidebar: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -58,8 +59,8 @@ export const Sidebar: React.FC = () => {
     >
       {/* Sticky Header */}
       <div className="sticky top-0 z-20 bg-white dark:bg-slate-900">
-        <div className="relative p-4 flex items-center justify-center h-16 border-b border-slate-200 dark:border-slate-800">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg" />
+        <div className="relative p-4 pl-[24px] flex items-center justify-start h-16 border-b border-slate-200 dark:border-slate-800">
+          <Image src="/next.svg" alt="logo" className="shrink-0" width={32} height={32} />
           <span
             className={`
             ml-3 font-semibold text-xl
