@@ -7,9 +7,9 @@ export type IconComponent = React.ComponentType<LucideProps>;
 export interface NavigationItemProps {
   icon: IconComponent;
   label: string;
-  isActive: boolean;
   onClick: () => void;
   badge?: string | number;
+  path?: string;
 }
 
 export interface NavigationSectionProps {

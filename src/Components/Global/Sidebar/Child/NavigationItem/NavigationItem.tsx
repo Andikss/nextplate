@@ -3,15 +3,20 @@
 import { NavigationItemProps } from "@/Components/ui";
 import { Tooltip } from "@/Components/ui/Tooltip/Tooltip";
 import { useSidebar } from "@/Contexts/Global";
+import { usePathname } from "next/navigation";
+
 
 export const NavigationItem: React.FC<NavigationItemProps> = ({
   icon: Icon,
   label,
-  isActive,
   onClick,
   badge,
+  path,
 }) => {
   const { isCollapsed } = useSidebar();
+  const pathname = usePathname();
+  const isActive = pathname === path;
+
   return (
     <Tooltip content={label} position={"right"}>
       <button

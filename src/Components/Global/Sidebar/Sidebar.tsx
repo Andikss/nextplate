@@ -2,7 +2,7 @@
 
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   Users,
   Settings,
@@ -32,10 +32,11 @@ import {
 } from "./Child";
 import Image from "next/image";
 import { useSidebar } from "@/Contexts/Global";
+import { useNavigation } from "@/Hooks";
 
 export const Sidebar: React.FC = () => {
   const { isCollapsed, setExpanded } = useSidebar();
-  const [activeItem, setActiveItem] = useState("dashboard");
+  const { navigate } = useNavigation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -101,14 +102,14 @@ export const Sidebar: React.FC = () => {
           <NavigationItem
             icon={LayoutDashboard}
             label="Dashboard"
-            isActive={activeItem === "dashboard"}
-            onClick={() => setActiveItem("dashboard")}
+            path="/"
+            onClick={() => navigate("/")}
           />
           <NavigationItem
             icon={BarChart3}
             label="Analytics"
-            isActive={activeItem === "analytics"}
-            onClick={() => setActiveItem("analytics")}
+            path="/analytics"
+            onClick={() => navigate("/analytics")}
           />
         </NavigationSection>
 
@@ -122,14 +123,14 @@ export const Sidebar: React.FC = () => {
             <NavigationItem
               icon={Users}
               label="Team Members"
-              isActive={activeItem === "team"}
-              onClick={() => setActiveItem("team")}
+              path="/organization/team"
+              onClick={() => navigate("/organization/team")}
             />
             <NavigationItem
               icon={Folder}
               label="Departments"
-              isActive={activeItem === "departments"}
-              onClick={() => setActiveItem("departments")}
+              path="/organization/departments"
+              onClick={() => navigate("/organization/departments")}
             />
           </NavigationGroup>
 
@@ -137,14 +138,13 @@ export const Sidebar: React.FC = () => {
             <NavigationItem
               icon={CircleDollarSign}
               label="Revenue"
-              isActive={activeItem === "revenue"}
-              onClick={() => setActiveItem("revenue")}
+              onClick={() => navigate("/finance/revenue")}
             />
             <NavigationItem
               icon={LineChart}
               label="Reports"
-              isActive={activeItem === "reports"}
-              onClick={() => setActiveItem("reports")}
+              path="/finance/reports"
+              onClick={() => navigate("/finance/reports")}
             />
           </NavigationGroup>
         </NavigationSection>
@@ -155,21 +155,20 @@ export const Sidebar: React.FC = () => {
             icon={Mail}
             label="Email"
             badge="14"
-            isActive={activeItem === "email"}
-            onClick={() => setActiveItem("email")}
+            path="/email"
+            onClick={() => navigate("/email")}
           />
           <NavigationItem
             icon={Calendar}
             label="Calendar"
-            isActive={activeItem === "calendar"}
-            onClick={() => setActiveItem("calendar")}
+            path="/calendar"
+            onClick={() => navigate("/calendar")}
           />
           <NavigationItem
             icon={MessageSquare}
             label="Messages"
             badge="3"
-            isActive={activeItem === "messages"}
-            onClick={() => setActiveItem("messages")}
+            onClick={() => navigate("/messages")}
           />
         </NavigationSection>
 
@@ -178,20 +177,20 @@ export const Sidebar: React.FC = () => {
           <NavigationItem
             icon={Settings}
             label="General"
-            isActive={activeItem === "settings"}
-            onClick={() => setActiveItem("settings")}
+            path="/general"
+            onClick={() => navigate("/general")}
           />
           <NavigationItem
             icon={Shield}
             label="Security"
-            isActive={activeItem === "security"}
-            onClick={() => setActiveItem("security")}
+            path="/security"
+            onClick={() => navigate("/security")}
           />
           <NavigationItem
             icon={Bell}
             label="Notifications"
-            isActive={activeItem === "notifications"}
-            onClick={() => setActiveItem("notifications")}
+            path="/notifications"
+            onClick={() => navigate("/notifications")}
           />
         </NavigationSection>
 
@@ -200,14 +199,14 @@ export const Sidebar: React.FC = () => {
           <NavigationItem
             icon={HelpCircle}
             label="Help Center"
-            isActive={activeItem === "help"}
-            onClick={() => setActiveItem("help")}
+            path="/support"
+            onClick={() => navigate("/support")}
           />
           <NavigationItem
             icon={BookOpen}
             label="Documentation"
-            isActive={activeItem === "docs"}
-            onClick={() => setActiveItem("docs")}
+            path="/documentation"
+            onClick={() => navigate("/documentation")}
           />
         </NavigationSection>
       </nav>
