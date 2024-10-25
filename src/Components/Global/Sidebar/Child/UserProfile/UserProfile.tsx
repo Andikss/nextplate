@@ -1,14 +1,12 @@
 /** @format */
 
-import { User } from "lucide-react";
+import { Avatar } from "@/Components/Global/Avatar";
 
 export const UserProfile: React.FC<{ isCollapsed: boolean }> = ({
   isCollapsed,
 }) => (
-  <div className="p-4 pl-[22px] shrink-0 border-t border-slate-200 dark:border-slate-800 flex items-center gap-4">
-    <div className="ml- w-8 h-8 shrink-0 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-      <User size={20} className="text-slate-600 dark:text-slate-300" />
-    </div>
+  <div className="p-4 pl-5 shrink-0 border-t border-slate-200 dark:border-slate-800 flex items-center gap-4">
+    <Avatar openable url="/assets/static/img/default-avatar.png" size="sm"/>
     <div
       className={`
         ${isCollapsed ? "opacity-0 w-0" : "opacity-100 w-auto"}
