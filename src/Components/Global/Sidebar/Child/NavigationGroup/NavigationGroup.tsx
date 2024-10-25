@@ -30,9 +30,10 @@ export const NavigationGroup: React.FC<NavigationGroupProps> = ({
         w-full flex items-center gap-4 p-3 rounded-lg transition-all duration-300
         hover:bg-slate-100 dark:hover:bg-slate-800
         text-slate-600 dark:text-slate-300
+        shrink-0
       `}
     >
-      <Icon size={20} />
+      <Icon size={20} className="shrink-0" />
       {!isCollapsed && (
         <>
           <span className="flex-1 text-left whitespace-nowrap">{title}</span>
