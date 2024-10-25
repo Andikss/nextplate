@@ -3,7 +3,7 @@
 "use client";
 
 import { useState } from "react";
-import { IconComponent } from "@/Components/Global";
+import { IconComponent, Tooltip } from "@/Components/Global";
 import { ChevronDown } from "lucide-react";
 
 interface NavigationGroupProps {
@@ -23,29 +23,39 @@ export const NavigationGroup: React.FC<NavigationGroupProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(initialExpanded);
 
+  const buttonContent = (
+    <button
+      onClick={() => setIsExpanded(!isExpanded)}
+      className={`
+        w-full flex items-center gap-4 p-3 rounded-lg transition-all duration-300
+        hover:bg-slate-100 dark:hover:bg-slate-800
+        text-slate-600 dark:text-slate-300
+      `}
+    >
+      <Icon size={20} />
+      {!isCollapsed && (
+        <>
+          <span className="flex-1 text-left whitespace-nowrap">{title}</span>
+          <ChevronDown
+            size={16}
+            className={`transition-transform duration-300 ${
+              isExpanded ? "rotate-180" : ""
+            }`}
+          />
+        </>
+      )}
+    </button>
+  );
+
   return (
     <div className="mb-1">
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className={`
-            w-full flex items-center gap-4 p-3 rounded-lg transition-all duration-300
-            hover:bg-slate-100 dark:hover:bg-slate-800
-            text-slate-600 dark:text-slate-300
-          `}
-      >
-        <Icon size={20} />
-        {!isCollapsed && (
-          <>
-            <span className="flex-1 text-left whitespace-nowrap">{title}</span>
-            <ChevronDown
-              size={16}
-              className={`transition-transform duration-300 ${
-                isExpanded ? "rotate-180" : ""
-              }`}
-            />
-          </>
-        )}
-      </button>
+      {isCollapsed ? (
+        <Tooltip content={title} position="right">
+          {buttonContent}
+        </Tooltip>
+      ) : (
+        buttonContent
+      )}
       <div
         className={`
           overflow-hidden transition-all duration-300
