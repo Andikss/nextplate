@@ -76,7 +76,7 @@ export const Sidebar: React.FC = () => {
             transition-all duration-300
           `}
           >
-            Dashboard
+            NextPlate
           </span>
 
           <button
