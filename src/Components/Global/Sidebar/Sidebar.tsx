@@ -50,7 +50,7 @@ export const Sidebar: React.FC = () => {
   return (
     <aside
       className={`
-      relative min-h-screen bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800
+      relative h-screen bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800
       transition-all duration-300 ease-in-out flex flex-col
       ${isCollapsed ? "w-20" : "w-64"}
       md:relative md:translate-x-0
@@ -58,7 +58,7 @@ export const Sidebar: React.FC = () => {
     `}
     >
       {/* Sticky Header */}
-      <div className="sticky top-0 z-20 bg-white dark:bg-slate-900">
+      <div className="flex-shrink-0 bg-white dark:bg-slate-900">
         <div className="relative p-4 pl-[24px] flex items-center justify-start h-16 border-b border-slate-200 dark:border-slate-800">
           <Image src="/next.svg" alt="logo" className="shrink-0" width={32} height={32} />
           <span
@@ -222,7 +222,7 @@ export const Sidebar: React.FC = () => {
       </nav>
 
       {/* Sticky Footer */}
-      <div className="sticky border-t bottom-0 z-20 pt bg-white dark:bg-slate-900">
+      <div className="flex-shrink-0 border-t bg-white dark:bg-slate-900">
         {/* User Profile */}
         <UserProfile isCollapsed={isCollapsed} />
 
