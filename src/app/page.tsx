@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <Sidebar/>
-      <main>
+      <main className="gradient-blue">
 
       </main>
     </div>

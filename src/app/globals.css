@@ -5,13 +5,23 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(
+    to right,
+    rgba(101, 165, 255, 0.12),
+    rgba(90, 135, 249, 0.13),
+    rgba(28, 139, 242, 0.2)
+  );
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: linear-gradient(
+      to right,
+      rgba(121, 58, 255, 0.12),
+      rgba(244, 246, 119, 0.13),
+      rgba(28, 139, 242, 0.2)
+    );
     --foreground: #ededed;
   }
 }
