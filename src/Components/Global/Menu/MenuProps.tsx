@@ -3,6 +3,8 @@
 import { LucideIcon } from "lucide-react";
 import { ReactNode } from "react";
 
+export type Position = "start" | "center" | "end";
+
 export interface MenuItemProps {
   id: string;
   label: string;

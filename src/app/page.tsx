@@ -8,17 +8,14 @@ import { User, Settings, LogOut } from "lucide-react";
 export default function Home() {
   const handleProfileClick = () => {
     console.log("Profile clicked");
-    // Add your logic here
   };
 
   const handleSettingsClick = () => {
     console.log("Settings clicked");
-    // Add your logic here
   };
 
   const handleLogoutClick = () => {
     console.log("Logout clicked");
-    // Add your logic here
   };
 
   return (
@@ -27,6 +24,7 @@ export default function Home() {
       <main className="flex-1 gradient-blue p-4">
         <div className="flex justify-end">
           <Menu
+            position="end"
             items={[
               { id: "1", label: "Profile", icon: User, onClick: handleProfileClick },
               { id: "2", label: "Settings", icon: Settings, onClick: handleSettingsClick },

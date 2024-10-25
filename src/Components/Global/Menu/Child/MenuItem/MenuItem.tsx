@@ -1,20 +1,19 @@
 /** @format */
 
-import { animated } from '@react-spring/web';
+"use client";
+
+import { animated } from "@react-spring/web";
 import { MenuItemProps } from "../../MenuProps";
 
-interface MenuItemComponentProps {
+export const MenuItem: React.FC<{
   item: MenuItemProps;
   style: any;
-}
-
-export const MenuItem: React.FC<MenuItemComponentProps> = ({
-  item,
-  style,
-}) => {
+}> = ({ item, style }) => {
   return (
     <animated.li
-      style={style}
+      style={{
+        ...style,
+      }}
       className="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 rounded p-2"
       onClick={() => item.onClick && item.onClick()}
     >
