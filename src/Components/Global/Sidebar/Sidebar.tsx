@@ -108,8 +108,8 @@ export const Sidebar: React.FC = () => {
           <NavigationItem
             icon={BarChart3}
             label="Analytics"
-            path="/analytics"
-            onClick={() => navigate("/analytics")}
+            path="/analitics"
+            onClick={() => navigate("/analitics")}
           />
         </NavigationSection>
 
@@ -123,14 +123,14 @@ export const Sidebar: React.FC = () => {
             <NavigationItem
               icon={Users}
               label="Team Members"
-              path="/organization/team"
-              onClick={() => navigate("/organization/team")}
+              path="/organization/teams"
+              onClick={() => navigate("/organization/teams")}
             />
             <NavigationItem
               icon={Folder}
-              label="Departments"
-              path="/organization/departments"
-              onClick={() => navigate("/organization/departments")}
+              label="Departements"
+              path="/organization/departements"
+              onClick={() => navigate("/organization/departements")}
             />
           </NavigationGroup>
 
@@ -138,7 +138,8 @@ export const Sidebar: React.FC = () => {
             <NavigationItem
               icon={CircleDollarSign}
               label="Revenue"
-              onClick={() => navigate("/finance/revenue")}
+              path="/finance/revenues"
+              onClick={() => navigate("/finance/revenues")}
             />
             <NavigationItem
               icon={LineChart}
@@ -205,8 +206,8 @@ export const Sidebar: React.FC = () => {
           <NavigationItem
             icon={BookOpen}
             label="Documentation"
-            path="/documentation"
-            onClick={() => navigate("/documentation")}
+            path="/documentations"
+            onClick={() => navigate("/documentations")}
           />
         </NavigationSection>
       </nav>
