@@ -1,12 +1,14 @@
 /** @format */
 
 import { NavigationSectionProps } from "@/Components/ui";
+import { useSidebar } from "@/Contexts/Global";
 
 export const NavigationSection: React.FC<NavigationSectionProps> = ({
   title,
   children,
-  isCollapsed,
 }) => {
+  const { isCollapsed } = useSidebar();
+
   return (
     <div className="mb-6">
       {!isCollapsed && (

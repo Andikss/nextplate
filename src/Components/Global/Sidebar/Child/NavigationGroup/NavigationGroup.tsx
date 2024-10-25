@@ -5,22 +5,22 @@
 import { useState } from "react";
 import { IconComponent, Tooltip } from "@/Components/ui";
 import { ChevronDown } from "lucide-react";
+import { useSidebar } from "@/Contexts/Global";
 
 interface NavigationGroupProps {
   title: string;
   icon: IconComponent;
   children: React.ReactNode;
-  isCollapsed: boolean;
   initialExpanded?: boolean;
 }
 
 export const NavigationGroup: React.FC<NavigationGroupProps> = ({
   title,
   children,
-  isCollapsed,
   icon: Icon,
   initialExpanded = false,
 }) => {
+  const { isCollapsed } = useSidebar();
   const [isExpanded, setIsExpanded] = useState(initialExpanded);
 
   const buttonContent = (
@@ -40,7 +40,7 @@ export const NavigationGroup: React.FC<NavigationGroupProps> = ({
           <ChevronDown
             size={16}
             className={`transition-transform duration-300 ${
-              isExpanded ? "rotate-180" : ""
+              isCollapsed ? "rotate-180" : ""
             }`}
           />
         </>
