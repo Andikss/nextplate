@@ -6,10 +6,11 @@ import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { useTransition, animated, useSpring } from "@react-spring/web";
 import { Download } from "lucide-react";
+import { Tooltip } from "../Tooltip";
 
 interface AvatarProps {
   url: string;
-  username?: string;
+  username: string;
   openable?: boolean;
   size?: "xs" | "sm" | "md" | "lg";
   className?: string;
@@ -100,19 +101,22 @@ export const Avatar: React.FC<AvatarProps> = ({
                     className="max-h-[70vh] object-contain cursor-pointer"
                     draggable={false}
                   />
-                  <button
-                    className="absolute top-4 left-4 text-2xl text-text transition-opacity duration-300 ease-in-out hover:opacity-70"
-                    onClick={handleDownload}
-                    title="Download"
-                  >
-                    <Download size={20} />
-                  </button>
-                  <button
-                    className="absolute top-4 right-4 text-2xl text-text transition-opacity duration-300 ease-in-out hover:opacity-70"
-                    onClick={handleClose}
-                  >
-                    ✕
-                  </button>
+                  <div className="absolute top-4 left-4 text-2xl text-text transition-opacity duration-300 ease-in-out hover:opacity-70">
+                    <Tooltip
+                      position="bottom"
+                      content={`Download ${username}'s avatar`}
+                    >
+                      <button onClick={handleDownload} title="Download">
+                        <Download size={20} />
+                      </button>
+                    </Tooltip>
+                  </div>
+
+                  <div className="absolute top-4 right-4 text-2xl text-text transition-opacity duration-300 ease-in-out hover:opacity-70">
+                    <Tooltip position="bottom" content="Close avatar">
+                      <button onClick={handleClose}>✕</button>
+                    </Tooltip>
+                  </div>
                 </animated.div>
               </animated.div>,
               document.body

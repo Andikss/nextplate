@@ -42,13 +42,27 @@ export const Tooltip: React.FC<TooltipProps> = ({
           {
             name: "offset",
             options: {
-              offset: [0, 8],
+              offset: ({ placement }: {
+                placement: string;
+              }) => {
+                if (placement.includes('bottom') || placement.includes('top')) {
+                  return [0, 8];
+                } else {
+                  return [8, 0];
+                }
+              },
             },
           },
           {
             name: "preventOverflow",
             options: {
               padding: 8,
+            },
+          },
+          {
+            name: "flip",
+            options: {
+              fallbackPlacements: ['top', 'bottom', 'right', 'left'],
             },
           },
         ],
