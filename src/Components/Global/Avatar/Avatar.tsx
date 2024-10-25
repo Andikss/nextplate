@@ -43,7 +43,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   const sizeClasses: Record<string, string> = {
     xs: "w-8 h-8",
     sm: "w-9 h-9",
-    md: "w-12 h-12",
+    md: "w-11 h-11",
     lg: "w-16 h-16",
   };
 
