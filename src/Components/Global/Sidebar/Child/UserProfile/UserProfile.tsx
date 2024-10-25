@@ -1,6 +1,6 @@
 /** @format */
 
-import { Avatar } from "@/Components/Global/Avatar";
+import { Avatar } from "@/Components/ui/Avatar";
 
 export const UserProfile: React.FC<{ isCollapsed: boolean }> = ({
   isCollapsed,

@@ -3,7 +3,7 @@
 "use client";
 
 import { useState } from "react";
-import { IconComponent, Tooltip } from "@/Components/Global";
+import { IconComponent, Tooltip } from "@/Components/ui";
 import { ChevronDown } from "lucide-react";
 
 interface NavigationGroupProps {

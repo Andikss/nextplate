@@ -1,7 +1,7 @@
 /** @format */
 
-import { NavigationItemProps } from "@/Components/Global";
-import { Tooltip } from "@/Components/Global/Tooltip/Tooltip";
+import { NavigationItemProps } from "@/Components/ui";
+import { Tooltip } from "@/Components/ui/Tooltip/Tooltip";
 
 export const NavigationItem: React.FC<NavigationItemProps> = ({
   icon: Icon,

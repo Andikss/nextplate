@@ -1,6 +1,6 @@
 /** @format */
 
-import { NavigationSectionProps } from "@/Components/Global";
+import { NavigationSectionProps } from "@/Components/ui";
 
 export const NavigationSection: React.FC<NavigationSectionProps> = ({
   title,
