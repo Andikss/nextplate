@@ -7,15 +7,7 @@ import { createPortal } from "react-dom";
 import { useTransition, animated, useSpring } from "@react-spring/web";
 import { Download } from "lucide-react";
 import { Tooltip } from "../Tooltip";
-
-interface AvatarProps {
-  url: string;
-  username: string;
-  openable?: boolean;
-  size?: "xs" | "sm" | "md" | "lg";
-  className?: string;
-  onClick?: () => void;
-}
+import { AvatarProps } from "./AvatarInterface";
 
 export const Avatar: React.FC<AvatarProps> = ({
   url,
