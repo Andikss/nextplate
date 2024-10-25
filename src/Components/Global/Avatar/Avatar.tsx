@@ -62,7 +62,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   };
 
   return (
-    <div className={`relative shrink-0 ${sizeClasses[size]} ${className}`}>
+    <div className={`relative shrink-0 ${sizeClasses[size]} ${className}`} style={{ zIndex: 99999 }}>
       <img
         src={url}
         alt={username}
@@ -78,12 +78,12 @@ export const Avatar: React.FC<AvatarProps> = ({
             createPortal(
               <animated.div
                 style={style}
-                className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50"
+                className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-[99999]"
                 onClick={handleClose}
               >
                 <animated.div
                   style={imageSpring}
-                  className="relative"
+                  className="relative z-[100000]"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <img
