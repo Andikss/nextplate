@@ -4,8 +4,6 @@
 
 import React, { useState, useEffect } from "react";
 import {
-  ChevronLeft,
-  ChevronRight,
   Users,
   Settings,
   HelpCircle,
@@ -23,6 +21,8 @@ import {
   Shield,
   Bell,
   MessageSquare,
+  ChevronsRight,
+  ChevronsLeft,
 } from "lucide-react";
 import {
   NavigationGroup,
@@ -73,12 +73,12 @@ export const Sidebar: React.FC = () => {
 
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className={`absolute p-1.5 text-white -right-[3rem] ${isCollapsed ? "sm:-right-[3rem]" : "sm:-right-[1.5rem]"} bg-blue-600 shadow-2xl dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full md:block z-50`}
+            className={`absolute p-1.5 text-white transition-all -right-[3rem] ${isCollapsed ? "sm:-right-[3rem]" : "sm:-right-[1.5rem]"} bg-blue-600 shadow-2xl dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full md:block z-50`}
           >
             {isCollapsed ? (
-              <ChevronRight size={24} />
+              <ChevronsRight size={24} />
             ) : (
-              <ChevronLeft size={24} />
+              <ChevronsLeft size={24} />
             )}
           </button>
         </div>
